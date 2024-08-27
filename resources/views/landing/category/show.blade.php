@@ -6,7 +6,7 @@
             <div class="row align-items-center">
                 <div class="col-auto">
                     <h2 class="page-title font-weight-bold text-uppercase">
-                        Daftar Produk Dengan Kategori : {{ $category->name }}
+                        Daftar Komponen Dengan Kategori : {{ $category->name }}
                     </h2>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                                     <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10"></path>
                                     <line x1="10" y1="12" x2="14" y2="12"></line>
                                 </svg>
-                                Stok Produk :
+                                Komponen yang Tersedia :
                                 <span class="text-success">{{ $product->quantity }}</span>
                             </p>
                         </div>
@@ -41,7 +41,7 @@
         <div class="container mx-auto">
             <div class="flex flex-col mb-5">
                 <h1 class="text-gray-700 font-bold md:text-lg text-base">
-                    Daftar Barang dengan kategori - {{ $category->name }}
+                    Daftar Komponen dengan kategori - {{ $category->name }}
                 </h1>
                 <p class="text-gray-400 text-xs">Kumpulan data barang dengan kategori - {{ $category->name }}</p>
             </div>
@@ -74,7 +74,7 @@
                             @else
                                 <button
                                     class="text-gray-700 bg-gray-200 p-2 rounded-lg text-sm text-center hover:bg-gray-300 w-full cursor-not-allowed">
-                                    Barang Tidak Tersedia
+                                    Komponen Tidak Tersedia
                                 </button>
                             @endif
                         </div>

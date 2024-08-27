@@ -3,15 +3,15 @@
 @section('content')
     <x-container>
         <div class="col-12">
-            <x-card title="DAFTAR PRODUK" class="card-body p-0">
+            <x-card title="DAFTAR KOMPONEN" class="card-body p-0">
                 <x-table>
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Foto</th>
-                            <th>Nama Produk</th>
+                            <th>Nama Komponen</th>
                             <th>Nama Supplier</th>
-                            <th>Kategori Produk</th>
+                            <th>Kategori Komponen</th>
                             <th>Satuan</th>
                             <th>Stok</th>
                             <th>Aksi</th>
@@ -33,13 +33,13 @@
                                 <td>
                                     <x-button-modal :id="$product->id" icon="plus" style="mr-1" title="Stok"
                                         class="btn bg-teal btn-sm text-white" />
-                                    <x-modal :id="$product->id" title="Tambah Stok Produk - {{ $product->name }}">
+                                    <x-modal :id="$product->id" title="Tambah Komponen yang Tersedia - {{ $product->name }}">
                                         <form action="{{ route('admin.stock.update', $product->id) }}" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
-                                            <x-input title="Stok Produk" name="quantity" type="text"
-                                                placeholder="Stok Produk" :value="$product->quantity" />
+                                            <x-input title="Komponen yang Tersedia" name="quantity" type="text"
+                                                placeholder="Komponen yang Tersedia" :value="$product->quantity" />
                                             <x-button-save title="Simpan" icon="save" class="btn btn-primary" />
                                         </form>
                                     </x-modal>

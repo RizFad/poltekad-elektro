@@ -1,16 +1,16 @@
-@extends('layouts.master', ['title' => 'Barang Keluar'])
+@extends('layouts.master', ['title' => 'Komponen Keluar'])
 
 @section('content')
     <x-container>
         <div class="col-12">
-            <x-card title="DAFTAR BARANG KELUAR" class="card-body p-0">
+            <x-card title="DAFTAR KOMPONEN KELUAR" class="card-body p-0">
                 <x-table>
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Nama Customer</th>
-                            <th>Nama Produk</th>
-                            <th>Kategori Produk</th>
+                            <th>Nama Komponen</th>
+                            <th>Kategori Komponen</th>
                             <th>Kuantitas</th>
                         </tr>
                     </thead>
@@ -38,10 +38,10 @@
                         @endforeach
                         <tr>
                             <td colspan="4" class="font-weight-bold text-uppercase">
-                                Total Barang Keluar
+                                Total Komponen Keluar
                             </td>
                             <td class="font-weight-bold text-danger text-right">
-                                {{ $grandQuantity }} Barang
+                                {{ $grandQuantity }} Komponen
                             </td>
                         </tr>
                     </tbody>

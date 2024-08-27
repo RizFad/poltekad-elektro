@@ -144,7 +144,7 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                            Barang
+                            Komponen
                         </span>
                     </a>
                 </li>

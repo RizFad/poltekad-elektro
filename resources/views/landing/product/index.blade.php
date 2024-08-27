@@ -1,11 +1,11 @@
-@extends('layouts.landing.master', ['title' => 'Produk'])
+@extends('layouts.landing.master', ['title' => 'Komponen'])
 
 @section('content')
     <div class="w-full py-6 px-4">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row md:justify-between mb-5 gap-4">
                 <div class="flex flex-col">
-                    <h1 class="text-gray-700 font-bold text-lg">Daftar Barang</h1>
+                    <h1 class="text-gray-700 font-bold text-lg">Daftar Komponen</h1>
                     <p class="text-gray-400 text-xs">
                         Kumpulan data barang yang berada di gudang
                     </p>
@@ -13,7 +13,7 @@
                 <form action="{{ route('product.index') }}" method="get">
                     <input
                         class="border text-sm rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-sky-700 text-gray-700 w-full"
-                        placeholder="Cari Data Barang.." name="search" value="{{ $search }}" />
+                        placeholder="Cari Data Komponen.." name="search" value="{{ $search }}" />
                 </form>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
@@ -45,7 +45,7 @@
                             @else
                                 <button
                                     class="text-gray-700 bg-gray-200 p-2 rounded-lg text-sm text-center hover:bg-gray-300 w-full cursor-not-allowed">
-                                    Barang Tidak Tersedia
+                                    Komponen Tidak Tersedia
                                 </button>
                             @endif
                         </div>

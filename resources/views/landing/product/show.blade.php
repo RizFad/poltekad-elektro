@@ -14,7 +14,7 @@
                         <p class="text-base md:text-lg text-gray-600 py-2 text-justify">{{ $product->description }}</p>
                     </div>
                     <div class="py-2">
-                        <h1 class="text-gray-600 text-sm">Informasi Produk</h1>
+                        <h1 class="text-gray-600 text-sm">Informasi Komponen</h1>
                         <div class="flex flex-row justify-between text-sm text-gray-500">
                             <p>Nama Supplier</p>
                             <p class="text-right">{{ $product->supplier->name }}</p>
@@ -28,12 +28,12 @@
                             <p>{{ $product->supplier->telp }}</p>
                         </div>
                         <div class="flex flex-row justify-between text-sm text-gray-500">
-                            <p>Jumlah Transaksi</p>
+                            <p>Jumlah Peminjaman</p>
                             <p>{{ $transaction->count() }} x (
                                 {{ $transaction->sum('quantity') }} {{ $product->unit }})</p>
                         </div>
                         <div class="flex flex-row justify-between text-sm text-gray-500">
-                            <p>Stok Produk</p>
+                            <p>Komponen yang Tersedia</p>
                             <p>{{ $product->quantity }} {{ $product->unit }}</p>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                 </button>
                             @else
                                 <div class="bg-red-400 text-center text-white rounded p-2">
-                                    <h4>Barang tidak Tersedia</h4>
+                                    <h4>Komponen tidak Tersedia</h4>
                                 </div>
                             @endif
                         </form>
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="flex flex-col mb-5">
-                <h1 class="text-gray-700 font-bold text-lg">Daftar Barang yang serupa</h1>
+                <h1 class="text-gray-700 font-bold text-lg">Daftar Komponen yang serupa</h1>
                 <p class="text-gray-400 text-xs">Kumpulan data barang yang berada di gudang</p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
@@ -95,7 +95,7 @@
                             @else
                                 <button
                                     class="text-gray-700 bg-gray-200 p-2 rounded-lg text-sm text-center hover:bg-gray-300 w-full cursor-not-allowed">
-                                    Barang Tidak Tersedia
+                                    Komponen Tidak Tersedia
                                 </button>
                             @endif
                         </div>

@@ -49,7 +49,7 @@ class OrderController extends Controller
             'unit' => $request->unit,
         ]);
 
-        return back()->with('toast_success', 'Permintaan Barang Berhasil Diajukan');
+        return back()->with('toast_success', 'Permintaan Komponen Berhasil Diajukan');
     }
 
     /**
@@ -75,7 +75,7 @@ class OrderController extends Controller
             );
         }
 
-        return back()->with('toast_success', 'Permintaan Barang Berhasil Diubah');
+        return back()->with('toast_success', 'Permintaan Komponen Berhasil Diubah');
     }
 
     /**
@@ -90,6 +90,6 @@ class OrderController extends Controller
 
         Storage::disk('local')->delete('public/orders/'. basename($order->image));
 
-        return back()->with('toast_success', 'Permintaan Barang Berhasil Dihapus');
+        return back()->with('toast_success', 'Permintaan Komponen Berhasil Dihapus');
     }
 }

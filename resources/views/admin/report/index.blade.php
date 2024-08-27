@@ -1,4 +1,4 @@
-@extends('layouts.master', ['title' => 'Barang Keluar'])
+@extends('layouts.master', ['title' => 'Komponen Keluar'])
 
 @section('content')
     <x-container>
@@ -17,13 +17,13 @@
         </div>
         @isset($fromDate, $toDate)
             <div class="col-12 my-3">
-                <x-card title="LAPORAN DATA BARANG" class="card-body p-0">
+                <x-card title="LAPORAN DATA KOMPONEN" class="card-body p-0">
                     <x-table>
                         <thead>
                             <tr>
-                                <th>Nama Barang</th>
-                                <th>Kategori Barang</th>
-                                <th>Kuantitas Barang Saat Ini</th>
+                                <th>Nama Komponen</th>
+                                <th>Kategori Komponen</th>
+                                <th>Kuantitas Komponen Saat Ini</th>
                             </tr>
                         </thead>
                         <tbody>

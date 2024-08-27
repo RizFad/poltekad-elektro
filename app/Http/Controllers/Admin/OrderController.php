@@ -104,7 +104,7 @@ class OrderController extends Controller
             ]);
         }
 
-        return back()->with('toast_success', 'Permintaan Barang Berhasil Dikonfirmasi');
+        return back()->with('toast_success', 'Permintaan Komponen Berhasil Dikonfirmasi');
     }
 
     /**

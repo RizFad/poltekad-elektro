@@ -3,13 +3,13 @@
 @section('content')
     <x-container>
         <div class="col-12">
-            <x-card title="DAFTAR PERMINTAAN BARANG" class="card-body p-0">
+            <x-card title="DAFTAR PERMINTAAN KOMPONEN" class="card-body p-0">
                 <x-table>
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Foto</th>
-                            <th>Nama Barang</th>
+                            <th>Nama Komponen</th>
                             <th>Kuantitas</th>
                             <th>Satuan</th>
                             <th>Status</th>
@@ -41,16 +41,16 @@
                                     @elseif($order->status == App\Enums\OrderStatus::Verified)
                                         <x-button-modal :id="$order->id" title="Tambahkan Permintaan" icon="plus"
                                             style="mr-1" class="btn btn-info btn-sm" />
-                                        <x-modal :id="$order->id" title="Tambahkan Barang">
+                                        <x-modal :id="$order->id" title="Tambahkan Komponen">
                                             <form action="{{ route('admin.order.update', $order->id) }}" method="POST"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PUT')
-                                                <x-input name="name" type="text" title="Nama Barang"
-                                                    placeholder="Nama Barang" :value="$order->name" />
+                                                <x-input name="name" type="text" title="Nama Komponen"
+                                                    placeholder="Nama Komponen" :value="$order->name" />
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <x-select title="Kategori Barang" name="category_id">
+                                                        <x-select title="Kategori Komponen" name="category_id">
                                                             <option value="">Silahkan Pilih</option>
                                                             @foreach ($categories as $category)
                                                                 <option value="{{ $category->id }}">
@@ -60,7 +60,7 @@
                                                         </x-select>
                                                     </div>
                                                     <div class="col-6">
-                                                        <x-select title="Supplier Barang" name="supplier_id">
+                                                        <x-select title="Supplier Komponen" name="supplier_id">
                                                             <option value="">Silahkan Pilih</option>
                                                             @foreach ($suppliers as $supplier)
                                                                 <option value="{{ $supplier->id }}">
@@ -72,18 +72,18 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <x-input name="quantity" type="number" title="Kuantitas Barang"
+                                                        <x-input name="quantity" type="number" title="Kuantitas Komponen"
                                                             placeholder="" :value="$order->quantity" />
                                                     </div>
                                                     <div class="col-6">
-                                                        <x-input name="unit" type="text" title="Satuan Barang"
-                                                            placeholder="Satuan Barang" :value="$order->unit" />
+                                                        <x-input name="unit" type="text" title="Satuan Komponen"
+                                                            placeholder="Satuan Komponen" :value="$order->unit" />
                                                     </div>
                                                 </div>
-                                                <x-input name="image" type="file" title="Foto Barang" placeholder=""
+                                                <x-input name="image" type="file" title="Foto Komponen" placeholder=""
                                                     :value="$order->image" />
-                                                <x-textarea name="description" title="Deskripsi Barang"
-                                                    placeholder="Deskripsi Barang">
+                                                <x-textarea name="description" title="Deskripsi Komponen"
+                                                    placeholder="Deskripsi Komponen">
                                                 </x-textarea>
                                                 <x-button-save title="Simpan" icon="save" class="btn btn-primary" />
                                             </form>

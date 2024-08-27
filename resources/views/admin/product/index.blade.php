@@ -1,20 +1,20 @@
-@extends('layouts.master', ['title' => 'Barang'])
+@extends('layouts.master', ['title' => 'Komponen'])
 
 @section('content')
     <x-container>
         <div class="col-12">
             @can('create-product')
-                <x-button-link title="Tambah Barang" icon="plus" class="btn btn-primary mb-3" style="mr-1" :url="route('admin.product.create')" />
+                <x-button-link title="Tambah Komponen" icon="plus" class="btn btn-primary mb-3" style="mr-1" :url="route('admin.product.create')" />
             @endcan
-            <x-card title="DAFTAR BARANG" class="card-body p-0">
+            <x-card title="DAFTAR KOMPONEN" class="card-body p-0">
                 <x-table>
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Foto</th>
-                            <th>Nama Barang</th>
-                            <th>Nama Supplier</th>
-                            <th>Kategori Barang</th>
+                            <th>Nama Komponen</th>
+                            <!-- <th>Nama Supplier</th> -->
+                            <th>Kategori Komponen</th>
                             <th>Satuan</th>
                             <th>Aksi</th>
                         </tr>
@@ -28,7 +28,7 @@
                                         style="background-image: url({{ $product->image }})"></span>
                                 </td>
                                 <td>{{ $product->name }}</td>
-                                <td>{{ $product->supplier->name }}</td>
+                                <!-- <td>{{ $product->supplier->name }}</td> -->
                                 <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->unit }}</td>
                                 <td>

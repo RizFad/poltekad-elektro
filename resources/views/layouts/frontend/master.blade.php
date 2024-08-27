@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{ $title }} - {{ config('app.name', 'Laravel') }}</title>
+    <title>{{ $title }} - {{ config('app.name', 'POLTEKAD') }}</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <meta name="msapplication-TileColor" content="#206bc4" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -16,8 +16,8 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="robots" content="noindex,nofollow,noarchive" />
-    <link rel="icon" href="{{ asset('icon.png') }}" type="image/x-icon" />
-    <link rel="shortcut icon" href="{{ asset('icon.png') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('favicon-32x32.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('favicon-32x32.png') }}" type="image/x-icon" />
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"

@@ -3,8 +3,9 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="/" class="navbar-brand navbar-brand-autodark">
-            <h3 class="font-weight-bold">INVENTORY SYSTEM</h3>
+        <a href="/" class="navbar-brand navbar-brand-autodark flex items-center space-x-2">
+            <img src="{{ asset('favicon-32x32.png') }}" class="w-7 h-7 object-center object-cover" />
+            <h3 class="font-bold">POLTEKAD</h3>
         </a>
         <div class="navbar-nav flex-row d-lg-none">
             <div class="nav-item dropdown">
@@ -77,7 +78,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Permintaan Barang
+                                Permintaan Komponen
                             </span>
                         </a>
                     </li>
@@ -102,7 +103,7 @@
                             </span>
                         </a>
                     </li> --}}
-                    <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Transaksi</div>
+                    <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Peminjaman</div>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('customer.transaction') ? 'active' : '' }}"
                             href="{{ route('customer.transaction') }}">
@@ -124,7 +125,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Transaksi
+                                Peminjaman
                             </span>
                         </a>
                     </li>
@@ -193,7 +194,7 @@
                             </a>
                         </li>
                     @endcan
-                    @can('index-supplier')
+                    <!-- @can('index-supplier')
                         <li class="nav-item">
                             <a class="nav-link {{ Route::is('admin.supplier*') ? 'active' : '' }}"
                                 href="{{ route('admin.supplier.index') }}">
@@ -212,7 +213,7 @@
                                 </span>
                             </a>
                         </li>
-                    @endcan
+                    @endcan -->
                     @can('index-product')
                         <li class="nav-item">
                             <a class="nav-link {{ Route::is('admin.product*') ? 'active' : '' }}"
@@ -230,7 +231,7 @@
                                     </svg>
                                 </span>
                                 <span class="nav-link-title">
-                                    Barang
+                                    Komponen
                                 </span>
                             </a>
                         </li>
@@ -258,7 +259,7 @@
                             </a>
                         </li>
                     @endcan --}}
-                    <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Stok Produk</div>
+                    <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Komponen yang Tersedia</div>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('admin.stock*') ? 'active' : '' }}"
                             href="{{ route('admin.stock.index') }}">
@@ -280,7 +281,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Stok Produk
+                                Komponen yang Tersedia
                             </span>
                         </a>
                     </li>
@@ -305,7 +306,7 @@
                             </span>
                         </a>
                     </li> --}}
-                    <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Transaksi</div>
+                    <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Peminjaman</div>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('admin.order*') ? 'active' : '' }}"
                             href="{{ route('admin.order.index') }}">
@@ -323,7 +324,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Permintaan Barang
+                                Permintaan Komponen
                             </span>
                         </a>
                     </li>
@@ -345,7 +346,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Barang Keluar
+                                Komponen Keluar
                             </span>
                         </a>
                     </li>

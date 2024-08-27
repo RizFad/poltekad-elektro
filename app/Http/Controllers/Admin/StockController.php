@@ -35,7 +35,7 @@ class StockController extends Controller
             'quantity' => $request->quantity,
         ]);
 
-        return back()->with('toast_success', 'Berhasil Menambahkan Stok Produk');
+        return back()->with('toast_success', 'Berhasil Menambahkan Komponen yang Tersedia');
     }
 
     public function report()

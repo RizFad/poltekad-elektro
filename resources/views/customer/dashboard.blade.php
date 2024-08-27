@@ -3,7 +3,7 @@
 @section('content')
     <x-container>
         <div class="col-sm-6 col-xl-6">
-            <x-widget title="Permintaan Barang" :subTitle="$products->count()" class="bg-azure">
+            <x-widget title="Permintaan Komponen" :subTitle="$products->count()" class="bg-azure">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24"
                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -25,7 +25,7 @@
             </x-widget>
         </div> --}}
         <div class="col-sm-6 col-xl-6">
-            <x-widget title="Transaksi" :subTitle="$transactions->count()" class="bg-azure">
+            <x-widget title="Peminjaman" :subTitle="$transactions->count()" class="bg-azure">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">

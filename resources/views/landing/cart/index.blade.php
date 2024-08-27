@@ -14,7 +14,7 @@
                                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                                     <tr>
                                         <th scope="col" class="px-4 py-3 w-0">#</th>
-                                        <th scope="col" class="px-4 py-3">Nama Barang</th>
+                                        <th scope="col" class="px-4 py-3">Nama Komponen</th>
                                         <th scope="col" class="px-4 py-3 text-right">Jumlah</th>
                                         <th scope="col" class="px-4 py-3 w-0">Aksi</th>
                                     </tr>
@@ -124,7 +124,7 @@
                                         </label>
                                         <input type="text"
                                             class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-200 cursor-not-allowed"
-                                            placeholder="Rafi Taufiqurrahman" value="{{ Auth::user()->name }}"
+                                            placeholder="nama lengkap" value="{{ Auth::user()->name }}"
                                             name="name" readonly />
                                     </div>
                                     <div class="flex flex-col gap-y-2">
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="flex flex-col gap-y-2">
                                         <label class="text-sm text-gray-700">
-                                            Total Barang
+                                            Total Komponen
                                         </label>
                                         <input type="text"
                                             class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-200 cursor-not-allowed"

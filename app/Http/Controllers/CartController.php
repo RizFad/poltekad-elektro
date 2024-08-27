@@ -30,14 +30,14 @@ class CartController extends Controller
         $alreadyInCart = Cart::where('user_id', $user->id)->where('product_id', $product->id)->first();
 
         if($alreadyInCart){
-            return back()->with('toast_error', 'Produk sudah ada didalam keranjang');
+            return back()->with('toast_error', 'Komponen sudah ada didalam keranjang');
         }else{
             $user->carts()->create([
                 'product_id' => $product->id,
                 'quantity' => '1',
             ]);
             return redirect(route('cart.index'))
-                ->with('toast_success', 'Produk berhasil ditambahkan keranjang');
+                ->with('toast_success', 'Komponen berhasil ditambahkan keranjang');
         }
     }
 
@@ -60,7 +60,7 @@ class CartController extends Controller
         $cart->delete();
 
         if($cart->count() >= 1){
-            return back()->with('toast_success', 'Produk berhasil dikeluarkan dari keranjang');
+            return back()->with('toast_success', 'Komponen berhasil dikeluarkan dari keranjang');
         }else{
             return redirect(route('landing'))->with('toast_success', 'Keranjang anda kosong');
         }
@@ -85,6 +85,6 @@ class CartController extends Controller
             ]);
         }
 
-        return redirect(route('cart.index'))->with('toast_success', 'Produk berhasil ditambahkan keranjang');
+        return redirect(route('cart.index'))->with('toast_success', 'Komponen berhasil ditambahkan keranjang');
     }
 }

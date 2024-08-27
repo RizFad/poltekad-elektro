@@ -53,7 +53,7 @@ class ProductController extends Controller
 
         Product::create([
             'category_id' => $request->category_id,
-            'supplier_id' => $request->supplier_id,
+            'supplier_id' => $request->supplier_id ?? 1,
             'name' => $request->name,
             'image' => $image->hashName(),
             'unit' => $request->unit,
@@ -91,7 +91,7 @@ class ProductController extends Controller
 
         $product->update([
             'category_id' => $request->category_id,
-            'supplier_id' => $request->supplier_id,
+            'supplier_id' => $request->supplier_id ?? 1,
             'name' => $request->name,
             'unit' => $request->unit,
             'description' => $request->description,
@@ -103,7 +103,7 @@ class ProductController extends Controller
             );
         }
 
-        return redirect(route('admin.product.index'))->with('toast_success', 'Produk Berhasil Diubah');
+        return redirect(route('admin.product.index'))->with('toast_success', 'Komponen Berhasil Diubah');
     }
 
     /**

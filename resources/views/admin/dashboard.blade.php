@@ -13,7 +13,7 @@
                 </svg>
             </x-widget>
         </div>
-        <div class="col-sm-6 col-xl-3">
+        <!-- <div class="col-sm-6 col-xl-3">
             <x-widget title="Supplier" :subTitle="$suppliers" class="bg-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -24,9 +24,9 @@
                     <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"></path>
                 </svg>
             </x-widget>
-        </div>
+        </div> -->
         <div class="col-sm-6 col-xl-3">
-            <x-widget title="Barang" :subTitle="$products" class="bg-indigo">
+            <x-widget title="Komponen" :subTitle="$products" class="bg-indigo">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-truck-loading" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -38,7 +38,7 @@
                 </svg>
             </x-widget>
         </div>
-        <div class="col-sm-6 col-xl-3">
+        <!-- <div class="col-sm-6 col-xl-3">
             <x-widget title="Kendaraan" :subTitle="$vehicles" class="bg-purple">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-steering-wheel" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -51,7 +51,7 @@
                     <line x1="14" y1="12" x2="20.75" y2="10"></line>
                 </svg>
             </x-widget>
-        </div>
+        </div> -->
         <div class="col-sm-6 col-xl-3">
             <x-widget title="Customer" :subTitle="$customers" class="bg-lime">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="24"
@@ -66,7 +66,7 @@
             </x-widget>
         </div>
         <div class="col-sm-6 col-xl-3">
-            <x-widget title="Permintaan Barang" :subTitle="0" class="bg-green">
+            <x-widget title="Permintaan Komponen" :subTitle="0" class="bg-green">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus"
                     width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                     fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -80,7 +80,7 @@
             </x-widget>
         </div>
         <div class="col-sm-6 col-xl-3">
-            <x-widget title="Barang Keluar" :subTitle="$transactions" class="bg-cyan">
+            <x-widget title="Komponen Keluar" :subTitle="$transactions" class="bg-cyan">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-x"
                     width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                     fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -95,7 +95,7 @@
             </x-widget>
         </div>
         <div class="col-sm-6 col-xl-3">
-            <x-widget title="Barang Keluar Bulan ini" :subTitle="$transactionThisMonth" class="bg-teal">
+            <x-widget title="Komponen Keluar Bulan ini" :subTitle="$transactionThisMonth" class="bg-teal">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-off"
                     width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                     fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -118,12 +118,12 @@
                 <div class="alert alert-danger d-flex align-items-center" role="alert">
                     <i class="fas fa-info-circle mr-2 fa-lg"></i>
                     Saat ini terdapat {{ $orders->count() }} permintaan barang menunggu konfirmasi.
-                    <a href="" class="ml-1">Lihat Detail Permintaan</a>
+                    <a href="{{ route('admin.order.index') }}" class="ml-1">Lihat Detail Permintaan</a>
                 </div>
             @endif
         </div>
         <div class="col-12 col-lg-6">
-            <x-card title="List Barang dengan stok kurang dari 10">
+            <x-card title="List Komponen dengan stok kurang dari 10">
                 <div class="list list-row list-hoverable">
                     @foreach ($productsOutStock as $product)
                         <div class="list-item">
@@ -144,7 +144,7 @@
             <div class="d-flex justify-content-end">{{ $productsOutStock->links() }}</div>
         </div>
         <div class="col-lg-6">
-            <x-card title="Chart Barang paling populer">
+            <x-card title="Chart Komponen paling populer">
                 <div id="chart-total-sales" class="my-3"></div>
             </x-card>
         </div>
