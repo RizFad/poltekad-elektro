@@ -2,8 +2,6 @@
 Aplikasi Web penyimpanan barang untuk laboratorium elektronika POLTEKAD, menggunakan framework laravel. <br><br>
 Latar belakang pembuatan aplikasi ini untuk melakukan sebuah transaksi permintaan, peminjaman dan juga pengambilan barang harus melakukan pengecekan barang di laboratorium elektronika terlebih dahulu yang dimana terletak pada lantai 1 sedangkan user mayoritas berada pada kelas perkuliahan dan juga barang yang di lab tidak di data secara mendetail oleh pengelola kepala laboratorium tersebut, sehingga untuk melakukan transaksi bisa memakan waktu yang cukup lama, oleh karena itu saya membangun sebuah aplikasi yang diharapkan mampu mempercepat dan mempermudah transaksi dan pengelolaan barang.
 
-[Imgur](https://imgur.com/41Dg6Dy)
-
 ## Cara Instalasi Project
 
 Pastikan git cli sudah terinstall, kemudian jalankan perintah dibawah
