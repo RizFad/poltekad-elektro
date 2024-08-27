@@ -7,7 +7,7 @@
                 <div class="flex flex-col">
                     <h1 class="text-gray-700 font-bold text-lg">Daftar Komponen</h1>
                     <p class="text-gray-400 text-xs">
-                        Kumpulan data barang yang berada di gudang
+                        Kumpulan data barang yang berada di Laboratorium
                     </p>
                 </div>
                 <form action="{{ route('product.index') }}" method="get">
@@ -39,7 +39,7 @@
                                     <button
                                         class="text-gray-700 bg-gray-200 p-2 rounded-lg text-sm text-center hover:bg-gray-300 w-full"
                                         type="submit">
-                                        Tambah ke keranjang
+                                        Tambah ke Peminjaman
                                     </button>
                                 </form>
                             @else

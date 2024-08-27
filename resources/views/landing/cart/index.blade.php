@@ -7,7 +7,7 @@
                 <div class="md:col-span-8">
                     <div class="border rounded-lg overflow-hidden">
                         <div class="bg-white border-b px-4 py-2.5 text-gray-700 font-medium flex items-center">
-                            Keranjang anda
+                            Peminjaman anda
                         </div>
                         <div class="overflow-x-auto relative">
                             <table class="w-full text-sm text-left text-gray-500 divide-y divide-gray-200">
@@ -77,7 +77,7 @@
                                                             <path d="M6 5l14 1l-1 7h-13"></path>
                                                         </svg>
                                                         <div class="mt-5">
-                                                            Keranjang Anda Kosong
+                                                        Peminjaman Anda Kosong
                                                         </div>
                                                     </div>
                                                 </div>

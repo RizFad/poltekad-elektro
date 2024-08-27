@@ -10,12 +10,7 @@
                         <x-input name="name" type="text" title="Nama Komponen" placeholder="Nama Komponen" :value="old('name')" />
                         <x-input name="unit" type="text" title="Satuan Komponen" placeholder="Satuan Komponen"
                             :value="old('unit')" />
-                        <!-- <x-select title="Supplier Komponen" name="supplier_id">
-                            <option value>Silahkan Pilih</option>
-                            @foreach ($suppliers as $supplier)
-                                <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
-                            @endforeach
-                        </x-select> -->
+                        <input type="hidden" name="supplier_id" value="1">
                         <x-select title="Kategori Komponen" name="category_id">
                             <option value>Silahkan Pilih</option>
                             @foreach ($categories as $category)

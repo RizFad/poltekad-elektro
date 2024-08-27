@@ -3,6 +3,7 @@
 @section('content')
     <x-container>
         <div class="col-12">
+            <x-button-link title="Tambah User" icon="plus" class="btn btn-primary mb-3" style="mr-1" :url="route('admin.user.create')" />
             <x-card title="DAFTAR USER" class="card-body p-0">
                 <x-table>
                     <thead>

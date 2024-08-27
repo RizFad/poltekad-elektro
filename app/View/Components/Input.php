@@ -11,9 +11,13 @@ class Input extends Component
     /**
      * Create a new component instance.
      *
-     * @return void
+     * @param string $title
+     * @param string $name
+     * @param string $type
+     * @param string $placeholder
+     * @param string $value
      */
-    public function __construct($title, $name, $type, $placeholder, $value)
+    public function __construct($title, $name, $type, $placeholder = '', $value = '')
     {
         $this->title = $title;
         $this->name = $name;

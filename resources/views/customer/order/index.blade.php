@@ -56,7 +56,7 @@
                                     @elseif($order->status == App\Enums\OrderStatus::Success)
                                         <form action="{{ route('cart.order', $product[0]->slug) }}" method="POST">
                                             @csrf
-                                            <x-button-save title="Tambahkan Keranjang" icon="shopping-cart"
+                                            <x-button-save title="Tambahkan Peminjaman" icon="shopping-cart"
                                                 class="btn btn-primary btn-sm" />
                                         </form>
                                     @endif

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -36,4 +37,25 @@ class UserController extends Controller
 
         return back()->with('toast_success', 'Role User Berhasil Diubah');
     }
+
+    public function create()
+    {
+        $role = Role::get();
+
+        return view('admin.user.create', compact('role'));
+    }
+
+    public function store(Request $request)
+    {
+
+        User::create([
+            'email' => $request->email,
+            'password' => $request->password,
+            'name' => $request->name,
+            'department' => $request->department,
+        ]);
+
+        return redirect((route('admin.user.index')))->with('toast_success', 'User Berhasil Ditambahkan');
+    }
+    
 }

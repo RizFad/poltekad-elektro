@@ -51,7 +51,7 @@
                                         <circle cx="17" cy="19" r="2"></circle>
                                         <path d="M17 17h-11v-14h-2"></path>
                                         <path d="M6 5l14 1l-1 7h-13"></path>
-                                    </svg>Tambahkan Keranjang
+                                    </svg>Tambahkan Peminjaman
                                 </button>
                             @else
                                 <div class="bg-red-400 text-center text-white rounded p-2">
@@ -64,7 +64,7 @@
             </div>
             <div class="flex flex-col mb-5">
                 <h1 class="text-gray-700 font-bold text-lg">Daftar Komponen yang serupa</h1>
-                <p class="text-gray-400 text-xs">Kumpulan data barang yang berada di gudang</p>
+                <p class="text-gray-400 text-xs">Kumpulan data barang yang berada di Laboratorium</p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
                 @foreach ($products as $product)
@@ -89,7 +89,7 @@
                                     <button
                                         class="text-gray-700 bg-gray-200 p-2 rounded-lg text-sm text-center hover:bg-gray-300 w-full"
                                         type="submit">
-                                        Tambah ke keranjang
+                                        Tambah ke Peminjaman
                                     </button>
                                 </form>
                             @else

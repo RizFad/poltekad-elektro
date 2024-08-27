@@ -25,7 +25,7 @@
                                 <td>{{ $i + $products->firstItem() }}</td>
                                 <td>
                                     <span class="avatar rounded avatar-md"
-                                        style="background-image: url({{ $product->image }})"></span>
+                                        style="background-image: url('{{ $product->image }}')"></span>
                                 </td>
                                 <td>{{ $product->name }}</td>
                                 <!-- <td>{{ $product->supplier->name }}</td> -->

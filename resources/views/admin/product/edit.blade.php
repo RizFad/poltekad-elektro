@@ -20,15 +20,7 @@
                                     @endforeach
                                 </x-select>
                             </div>
-                            <!-- <div class="col-6">
-                                <x-select title="Supplier Komponen" name="supplier_id">
-                                    <option value="">Silahkan Pilih</option>
-                                    @foreach ($suppliers as $supplier)
-                                        <option value="{{ $supplier->id }}" @selected($product->supplier_id == $supplier->id)>
-                                            {{ $supplier->name }}</option>
-                                    @endforeach
-                                </x-select>
-                            </div> -->
+                            <input type="hidden" name="supplier_id" value="1">
                         </div>
                         <div class="row">
                             <div class="col-6">
