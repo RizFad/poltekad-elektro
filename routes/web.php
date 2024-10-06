@@ -90,6 +90,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'r
     Route::controller(TransactionController::class)->group(function(){
         Route::get('/transaction/product', 'product')->name('transaction.product');
         Route::get('/transaction/vehicle', 'vehicle')->name('transaction.vehicle');
+        Route::put('/transaction/update/{id}', 'update')->name('transaction.update');
     });
 
     // Route::controller(ReportController::class)->group(function(){

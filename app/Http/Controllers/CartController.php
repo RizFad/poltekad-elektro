@@ -46,7 +46,7 @@ class CartController extends Controller
         $product = Product::whereId($cart->product_id)->first();
 
         if($product->quantity < $request->quantity){
-            return back()->with('toast_error', 'Stok produk tidak mencukupi');
+            return back()->with('toast_error', 'Stok produk "' . $product->name . '" tidak mencukupi, hanya tersisa ' . $product->quantity . ' unit.');
         }else{
             $cart->update([
                 'quantity' => $request->quantity,

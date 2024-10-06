@@ -33,9 +33,22 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'password' => 'nullable|string|min:6',
+            'role' => 'required|exists:roles,id',
+        ]);
+
+        $user->name = $request->name;
+
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->password);
+        }
+
+        $user->save();
         $user->syncRoles($request->role);
 
-        return back()->with('toast_success', 'Role User Berhasil Diubah');
+        return back()->with('toast_success', 'Data User Berhasil Diubah');
     }
 
     public function create()
@@ -47,15 +60,21 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:6',
+            'name' => 'required|string|max:255',
+            'department' => 'nullable|string|max:255',
+        ]);
 
         User::create([
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'name' => $request->name,
             'department' => $request->department,
         ]);
 
-        return redirect((route('admin.user.index')))->with('toast_success', 'User Berhasil Ditambahkan');
+        return redirect(route('admin.user.index'))->with('toast_success', 'User Berhasil Ditambahkan');
     }
     
 }

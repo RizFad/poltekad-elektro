@@ -51,12 +51,21 @@
                                                 {{ $cart->quantity }} (qty)
                                             </td>
                                             <td class="py-3 px-4 whitespace-nowrap text-right flex gap-2">
-                                                <form action="{{ route('cart.update', $cart->id) }}" method="POST">
+                                                <form id="cart-update-form-{{ $cart->id }}" action="{{ route('cart.update', $cart->id) }}" method="POST">
                                                     @csrf
                                                     @method('PUT')
                                                     <input
                                                         class="w-16 border px-2 py-0.5 rounded focus:outline-none focus:ring-2 focus:ring-sky-600"
-                                                        value="{{ $cart->quantity }}" type="number" name="quantity" />
+                                                        value="{{ $cart->quantity }}" type="number" name="quantity" id="quantity-{{ $cart->id }}" />
+
+                                                    <button type="button" onclick="submitForm({{ $cart->id }})"
+                                                        class="text-green-500 hover:text-green-700 focus:outline-none">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                                            stroke="currentColor" stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M5 13l4 4L19 7" />
+                                                        </svg>
+                                                    </button>
                                                 </form>
                                             </td>
                                         @empty
@@ -165,6 +174,12 @@
             </div>
         </div>
     </div>
+    <script>
+        function submitForm(cartId) {
+            const form = document.getElementById('cart-update-form-' + cartId);
+            form.submit();
+        }
+    </script>
 @endsection
 
 @push('js')

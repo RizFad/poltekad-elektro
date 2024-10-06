@@ -35,8 +35,9 @@
                                         <form action="{{ route('admin.user.update', $user->id) }}" method="POST">
                                             @csrf
                                             @method('PUT')
-                                            <x-input name="name" type="text" title="Ubah Data" placeholder=""
+                                            <x-input name="name" type="text" title="Nama" placeholder=""
                                                 :value="$user->name" />
+                                            <x-input name="password" type="password" title="Password" placeholder="" />
                                             <x-select title="Role" name="role">
                                                 <option value="">Silahkan Pilih</option>
                                                 @foreach ($roles as $role)

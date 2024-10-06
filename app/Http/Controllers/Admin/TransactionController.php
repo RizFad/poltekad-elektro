@@ -31,4 +31,22 @@ class TransactionController extends Controller
 
         return view('admin.transaction.vehicle', compact('rents'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $transaction = Transaction::with('details.product')->findOrFail($id);
+
+        foreach ($transaction->details as $details) {
+            $product = $details->product;
+            $product->update([
+                'quantity' => $product->quantity + $details->quantity,
+            ]);
+        }
+
+        $transaction->updated_at = now();
+        $transaction->save();
+
+        return back()->with('toast_success', 'Produk berhasil dikembalikan dan stok diperbarui.');
+    }
+
 }

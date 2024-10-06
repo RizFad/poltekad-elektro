@@ -10,7 +10,7 @@
                             <th>#</th>
                             <th>Foto</th>
                             <th>Nama Komponen</th>
-                            <th>Nama Supplier</th>
+                            <!-- <th>Nama Supplier</th> -->
                             <th>Kategori Komponen</th>
                             <th>Satuan</th>
                             <th>Stok</th>
@@ -26,7 +26,7 @@
                                         style="background-image: url({{ $product->image }})"></span>
                                 </td>
                                 <td>{{ $product->name }}</td>
-                                <td>{{ $product->supplier->name }}</td>
+                                <!-- <td>{{ $product->supplier->name }}</td> -->
                                 <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->unit }}</td>
                                 <td>{{ $product->quantity }}</td>
