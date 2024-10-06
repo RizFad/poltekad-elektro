@@ -94,6 +94,9 @@
                         @endforeach
                     </tbody>
                 </x-table>
+                <div class="d-flex justify-content-center">
+                    {{ $orders->links() }}
+                </div>
             </x-card>
         </div>
     </x-container>

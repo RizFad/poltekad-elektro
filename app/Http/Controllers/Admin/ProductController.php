@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ProductImport;
 
 class ProductController extends Controller
 {
@@ -120,4 +122,21 @@ class ProductController extends Controller
 
         return back()->with('toast_success', 'Kategori Berhasil Dihapus');
     }
+
+    public function import(Request $request){
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls',
+        ]);
+
+        Excel::import(new ProductImport, $request->file('file'));
+
+        return redirect()->route('admin.product.index')->with('success', 'Data komponen berhasil diimport!');
+    }
+
+    public function downloadTemplate()
+{
+    $file = public_path("excel/komponen.xlsx");
+    return response()->download($file);
+}
+
 }

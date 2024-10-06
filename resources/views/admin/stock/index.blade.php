@@ -48,6 +48,9 @@
                         @endforeach
                     </tbody>
                 </x-table>
+                <div class="d-flex justify-content-center">
+                    {{ $products->links() }}
+                </div>
             </x-card>
         </div>
     </x-container>

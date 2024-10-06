@@ -63,6 +63,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'r
         ->except('show')
         ->middleware('permission:index-product');
 
+    Route::post('/product/import', [ProductController::class, 'import'])->name('product.import');
+    Route::get('/product/download-template', [ProductController::class, 'downloadTemplate'])->name('product.downloadTemplate');
+
     Route::resource('/stock', StockController::class)
         ->only('index', 'update')
         ->middleware('permission:index-stock');
