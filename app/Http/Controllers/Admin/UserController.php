@@ -35,7 +35,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'password' => 'nullable|string|min:6',
+            'password' => 'nullable|string|min:8',
             'role' => 'required|exists:roles,id',
         ]);
 
@@ -62,17 +62,21 @@ class UserController extends Controller
     {
         $request->validate([
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:6',
+            'password' => 'required|string|min:8',
             'name' => 'required|string|max:255',
             'department' => 'nullable|string|max:255',
         ]);
 
-        User::create([
+        $role = Role::where('name', 'Customer')->first();
+
+        $user = User::create([
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'name' => $request->name,
             'department' => $request->department,
         ]);
+
+        $user->assignRole($role);
 
         return redirect(route('admin.user.index'))->with('toast_success', 'User Berhasil Ditambahkan');
     }

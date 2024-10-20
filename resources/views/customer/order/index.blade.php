@@ -44,8 +44,8 @@
                                                     :value="$order->image" />
                                                 <x-input name="name" type="text" title="Nama Komponen"
                                                     placeholder="Nama Komponen" :value="$order->name" />
-                                                <x-input name="quantity" type="number" title="Kuantitas"
-                                                    placeholder="Kuantitas" :value="$order->quantity" />
+                                                    <x-input name="quantity" type="number" title="Kuantitas"
+                                                    placeholder="Kuantitas" :value="$order->quantity" min="1" />
                                                 <x-input name="unit" type="text" title="Satuan" placeholder="Satuan"
                                                     :value="$order->unit" />
                                                 <x-button-save title="Simpan" icon="save" class="btn btn-primary" />
@@ -74,7 +74,7 @@
                     <x-input name="image" type="file" title="Foto Komponen" placeholder="" :value="old('image')" />
                     <x-input name="name" type="text" title="Nama Komponen" placeholder="Nama Komponen"
                         :value="old('name')" />
-                    <x-input name="quantity" type="number" title="Kuantitas" placeholder="Kuantitas" :value="old('quantity')" />
+                        <x-input name="quantity" type="number" title="Kuantitas" placeholder="Kuantitas" :value="old('quantity')" min="1" />
                     <x-input name="unit" type="text" title="Satuan" placeholder="Satuan" :value="old('unit')" />
                     <x-button-save title="Simpan" icon="save" class="btn btn-primary" />
                 </form>

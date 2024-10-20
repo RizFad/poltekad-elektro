@@ -38,6 +38,13 @@
                                             @method('PUT')
                                             <x-button-save title="Konfirmasi" icon="check" class="btn btn-primary btn-sm" />
                                         </form>
+                                        <form action="{{ route('admin.order.destroy', $order->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this request?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete">
+                                                <span>&#10006;</span>
+                                            </button>
+                                        </form>
                                     @elseif($order->status == App\Enums\OrderStatus::Verified)
                                         <x-button-modal :id="$order->id" title="Tambahkan Permintaan" icon="plus"
                                             style="mr-1" class="btn btn-info btn-sm" />
@@ -72,8 +79,8 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <x-input name="quantity" type="number" title="Kuantitas Komponen"
-                                                            placeholder="" :value="$order->quantity" />
+                                                    <x-input name="quantity" type="number" title="Kuantitas Komponen"
+                                                    placeholder="" :value="$order->quantity" min="1" />
                                                     </div>
                                                     <div class="col-6">
                                                         <x-input name="unit" type="text" title="Satuan Komponen"
