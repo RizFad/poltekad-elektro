@@ -21,14 +21,15 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::with('user')->where('user_id', Auth::id())->paginate(10);
-
-        $product = [];
+        $products = [];
 
         foreach($orders as $order){
-            $product = Product::where('name', $order->name)->where('quantity', $order->quantity)->get();
+            $product = Product::where('name', $order->name)->where('quantity', $order->quantity)->first();
+            if ($product) {
+                $products[$order->id] = $product;
+            }
         }
-
-        return view('customer.order.index', compact('orders', 'product'));
+        return view('customer.order.index', compact('orders', 'products'));
     }
 
     /**

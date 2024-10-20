@@ -44,7 +44,7 @@
                                                     :value="$order->image" />
                                                 <x-input name="name" type="text" title="Nama Komponen"
                                                     placeholder="Nama Komponen" :value="$order->name" />
-                                                    <x-input name="quantity" type="number" title="Kuantitas"
+                                                <x-input name="quantity" type="number" title="Kuantitas"
                                                     placeholder="Kuantitas" :value="$order->quantity" min="1" />
                                                 <x-input name="unit" type="text" title="Satuan" placeholder="Satuan"
                                                     :value="$order->unit" />
@@ -54,11 +54,13 @@
                                         <x-button-delete :id="$order->id" :url="route('customer.order.destroy', $order->id)" title=""
                                             class="btn btn-danger btn-sm" />
                                     @elseif($order->status == App\Enums\OrderStatus::Success)
-                                        <form action="{{ route('cart.order', $product[0]->slug) }}" method="POST">
-                                            @csrf
-                                            <x-button-save title="Tambahkan Peminjaman" icon="shopping-cart"
-                                                class="btn btn-primary btn-sm" />
-                                        </form>
+                                        @if (isset($products[$order->id]))
+                                            <form action="{{ route('cart.order', $products[$order->id]->slug) }}" method="POST">
+                                                @csrf
+                                                <x-button-save title="Tambahkan Peminjaman" icon="shopping-cart"
+                                                    class="btn btn-primary btn-sm" />
+                                            </form>
+                                        @endif
                                     @endif
                                 </td>
                             </tr>
