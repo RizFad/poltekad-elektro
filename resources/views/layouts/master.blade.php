@@ -18,6 +18,7 @@
     <meta name="robots" content="noindex,nofollow,noarchive" />
     <link rel="icon" href="{{ asset('favicon-32x32.png') }}" type="image/x-icon" />
     <link rel="shortcut icon" href="{{ asset('favicon-32x32.png') }}" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"

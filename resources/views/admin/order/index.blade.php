@@ -42,12 +42,21 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" title="Delete">
-                                                <span>&#10006;</span>
+                                                <i class="fas fa-times text-white"></i>
                                             </button>
                                         </form>
                                     @elseif($order->status == App\Enums\OrderStatus::Verified)
-                                        <x-button-modal :id="$order->id" title="Tambahkan Permintaan" icon="plus"
-                                            style="mr-1" class="btn btn-info btn-sm" />
+                                        <div class="d-flex">
+                                            <x-button-modal :id="$order->id" title="Tambahkan Permintaan" icon="plus"
+                                                style="mr-1" class="btn btn-info btn-sm" />
+                                            <form action="{{ route('admin.order.destroy', $order->id) }}" method="POST" onsubmit="return confirm('Yakin ingin membatalkan order ini?');" style="margin-left: 5px;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Cancel Order">
+                                                    Batalkan Permintaan
+                                                </button>
+                                            </form>
+                                        </div>
                                         <x-modal :id="$order->id" title="Tambahkan Komponen">
                                             <form action="{{ route('admin.order.update', $order->id) }}" method="POST"
                                                 enctype="multipart/form-data">

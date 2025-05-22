@@ -40,6 +40,15 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'quantity' => 'required|integer|min:1',
+            'image' => 'required|image',
+            'unit' => 'required|string'
+        ], [
+            'quantity.min' => 'Kuantitas minimal adalah 1.'
+        ]);
+
         $image = $this->uploadImage($request, $path = 'public/orders/', $name = 'image');
 
         Order::create([
@@ -62,6 +71,14 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'quantity' => 'required|integer|min:1',
+            'unit' => 'required|string'
+        ], [
+            'quantity.min' => 'Kuantitas minimal adalah 1.'
+        ]);
+
         $image = $this->uploadImage($request, $path = 'public/orders/', $name = 'image');
 
         $order->update([
