@@ -5,7 +5,7 @@
         </button>
         <a href="/" class="navbar-brand navbar-brand-autodark flex items-center space-x-2">
             <img src="{{ asset('favicon-32x32.png') }}" class="w-7 h-7 object-center object-cover" />
-            <h3 class="font-bold">POLTEKAD</h3>
+            <h3 class="font-bold">SI -LAB</h3>
         </a>
         <div class="navbar-nav flex-row d-lg-none">
             <div class="nav-item dropdown">

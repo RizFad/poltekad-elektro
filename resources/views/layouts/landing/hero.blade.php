@@ -5,9 +5,9 @@
                 <h1 class="text-center md:text-start text-4xl font-bold md:text-6xl text-gray-100">
                     Laboratorium Elektronika
                 </h1>
-                <p class="text-sm md:text-lg text-center md:text-start text-gray-300">
+                <!-- <p class="text-sm md:text-lg text-center md:text-start text-gray-300">
                     Komponen Elektronika
-                </p>
+                </p> -->
             </div>
             <div class="hidden md:flex md:col-span-5">
                 <img src="{{ asset('elka1.png') }}" class="w-full" />
