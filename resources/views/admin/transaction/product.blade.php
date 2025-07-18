@@ -11,8 +11,8 @@
                             <th>Nama Peminjam</th>
                             <th>Nama Komponen</th>
                             <th>Kategori Komponen</th>
-                            <th>Tanggal Peminjaman</th>
-                            <th>Tanggal Pengembalian</th>
+                            <th>Tanggal Peminjaman (PKA#11)</th>
+                            <th>Tanggal Pengembalian (PKA#11)</th>
                             <th>Kuantitas</th>
                             <th>Aksi</th>
                         </tr>
@@ -52,7 +52,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if ($transaction->created_at == $transaction->updated_at)
+                                    @if ($transaction->created_at == $transaction->updated_at && $transaction->status == null)
                                         <form action="{{ route('admin.transaction.update', $transaction->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin mengembalikan produk?');">
                                             @csrf
                                             @method('PUT')

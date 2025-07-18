@@ -7,6 +7,7 @@ use App\Models\Vehicle;
 use App\Enums\VehicleStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class VehicleController extends Controller
 {
@@ -24,7 +25,7 @@ class VehicleController extends Controller
             'user_id' => Auth::id(),
             'vehicle_id' => $request->vehicle_id,
             'requirement' => $request->requirement,
-            'start_date' => now()->timezone('Asia/Kuala_Lumpur'),
+            'start_date' => Carbon::now('Asia/Jakarta'),
         ]);
 
         Vehicle::whereId($vehicle->vehicle_id)->update([

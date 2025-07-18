@@ -169,6 +169,10 @@
                             <button class="text-white bg-sky-900 hover:bg-sky-800 rounded-lg w-full p-2" type="submit">
                                 Order Sekarang
                             </button>
+                            
+                            <a href="{{ route('landing') }}" class="block text-white bg-sky-900 hover:bg-sky-800 rounded-lg w-full p-2 text-center mt-2">
+                                Tambah Peminjaman
+                            </a>
                     </form>
                 </div>
             </div>

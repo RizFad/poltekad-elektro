@@ -1,10 +1,9 @@
-@extends('layouts.master', ['title' => 'Peminjaman'])
+@extends('layouts.master', ['title' => 'Pengembalian'])
 
 @section('content')
     <x-container>
         <div class="col-12">
-            <x-button-link title="Tambah Peminjaman" icon="plus" class="btn btn-primary mb-3" style="mr-1" :url="route('landing')" />
-            <x-card title="Daftar Peminjaman" class="card-body p-0">
+            <x-card title="DAFTAR PENGEMBALIAN" class="card-body p-0">
                 <x-table>
                     <thead>
                         <tr>
@@ -13,13 +12,14 @@
                             <th>Nama Komponen</th>
                             <th>Kategori Komponen</th>
                             <th>Kuantitas</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($transactions as $i => $transaction)
                             <tr>
                                 <td>{{ $i + $transactions->firstItem() }}</td>
-                                <td>{{ $transaction->user->name }}</td>
+                                <td>{{ $transaction->id }}</td>
                                 <td>
                                     @foreach ($transaction->details as $details)
                                         <li>{{ $details->product->name }}</li>
@@ -27,28 +27,32 @@
                                 </td>
                                 <td>
                                     @foreach ($transaction->details as $details)
-                                        <li>{{ $details->product->category->name }}</li>
+                                        <li>{{ $details->product->category->name ?? '-' }}</li>
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach ($transaction->details as $details)
-                                        <li>{{ $details->quantity }} - {{ $details->product->unit }}</li>
+                                        <li>{{ $details->quantity }} {{ $details->product->unit }}</li>
                                     @endforeach
+                                </td>
+                                <td>
+                                    @if($transaction->status == null)
+                                        <form action="{{ route('customer.transaction.return.process', $transaction->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-warning" onclick="return confirm('Yakin ingin mengembalikan barang ini?')">
+                                                Kembalikan
+                                            </button>
+                                        </form>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
-                        <tr>
-                            <td colspan="4" class="font-weight-bold text-uppercase">
-                                Total Peminjaman
-                            </td>
-                            <td class="font-weight-bold text-danger text-right">
-                                {{ $transactions->count() }}x Peminjaman
-                            </td>
-                        </tr>
                     </tbody>
                 </x-table>
             </x-card>
-            <div class="d-flex justify-content-end">{{ $transactions->links() }}</div>
+            <div class="d-flex justify-content-end">
+                {{ $transactions->links() }}
+            </div>
         </div>
     </x-container>
 @endsection

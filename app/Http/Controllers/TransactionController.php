@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\TransactionDetail;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class TransactionController extends Controller
 {
@@ -26,6 +27,8 @@ class TransactionController extends Controller
         $transaction = Transaction::create([
             'invoice' => $invoice,
             'user_id' => Auth::id(),
+            'created_at' => Carbon::now('Asia/Jakarta'),
+            'updated_at' => Carbon::now('Asia/Jakarta'),
         ]);
 
         $carts = Cart::where('user_id', Auth::id())->get();
@@ -35,6 +38,8 @@ class TransactionController extends Controller
                 'transaction_id' => $transaction->id,
                 'product_id' => $cart->product_id,
                 'quantity' => $cart->quantity,
+                'created_at' => Carbon::now('Asia/Jakarta'),
+                'updated_at' => Carbon::now('Asia/Jakarta'),
             ]);
             Product::whereId($cart->product_id)->decrement('quantity', $cart->quantity);
         }

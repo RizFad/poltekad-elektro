@@ -7,6 +7,7 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Models\TransactionDetail;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class TransactionController extends Controller
 {
@@ -43,7 +44,8 @@ class TransactionController extends Controller
             ]);
         }
 
-        $transaction->updated_at = now();
+        $transaction->updated_at = Carbon::now('Asia/Jakarta');
+        $transaction->status = 'returned';
         $transaction->save();
 
         return back()->with('toast_success', 'Produk berhasil dikembalikan dan stok diperbarui.');

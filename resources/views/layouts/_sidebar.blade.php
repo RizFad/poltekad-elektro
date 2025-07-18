@@ -5,7 +5,7 @@
         </button>
         <a href="/" class="navbar-brand navbar-brand-autodark flex items-center space-x-2">
             <img src="{{ asset('favicon-32x32.png') }}" class="w-7 h-7 object-center object-cover" />
-            <h3 class="font-bold">SI -LAB</h3>
+            <h3 class="font-bold"> SI-LAB</h3>
         </a>
         <div class="navbar-nav flex-row d-lg-none">
             <div class="nav-item dropdown">
@@ -126,6 +126,18 @@
                             </span>
                             <span class="nav-link-title">
                                 Peminjaman
+                            </span>
+                        </a>
+                    </li>
+                    <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Pengembalian</div>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::is('customer.transaction.return') ? 'active' : '' }}"
+                            href="{{ route('customer.transaction.return') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                                <i class="fas fa-archive" style="font-size: 12px;"></i>
+                            </span>
+                            <span class="nav-link-title">
+                                Pengembalian
                             </span>
                         </a>
                     </li>
@@ -332,21 +344,10 @@
                         <a class="nav-link {{ Route::is('admin.transaction.product') ? 'active' : '' }}"
                             href="{{ route('admin.transaction.product') }}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-shopping-cart-x" width="24" height="24"
-                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <circle cx="6" cy="19" r="2"></circle>
-                                    <circle cx="17" cy="19" r="2"></circle>
-                                    <path d="M17 17h-11v-14h-2"></path>
-                                    <path d="M6 5l7.999 .571m5.43 4.43l-.429 2.999h-13"></path>
-                                    <path d="M17 3l4 4"></path>
-                                    <path d="M21 3l-4 4"></path>
-                                </svg>
+                                <img src="{{ asset('favicon-16x16.png') }}" alt="Komponen Keluar Icon" width="24" height="24">
                             </span>
                             <span class="nav-link-title">
-                                Komponen Keluar
+                                Komponen Keluar (PKA#11)
                             </span>
                         </a>
                     </li>

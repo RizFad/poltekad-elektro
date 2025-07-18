@@ -9,6 +9,7 @@ use App\Enums\VehicleStatus;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class RentController extends Controller
 {
@@ -79,7 +80,7 @@ class RentController extends Controller
     public function update(Rent $rent)
     {
         $rent->update([
-            'end_date' => now()->timezone('Asia/Kuala_Lumpur'),
+            'end_date' => Carbon::now('Asia/Jakarta'),
             'status' => RentStatus::In,
         ]);
 

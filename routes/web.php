@@ -108,6 +108,8 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.', 'middleware' => ['aut
     Route::get('/transaction', CustomerTransactionController::class)->name('transaction');
     Route::resource('/order', CustomerOrderController::class);
     Route::resource('/rent', CustomerRentController::class);
+    Route::get('/transaction/return', [CustomerTransactionController::class, 'returnList'])->name('transaction.return');
+    Route::post('/transaction/return/{transaction}', [CustomerTransactionController::class, 'returnTransaction'])->name('transaction.return.process');
     Route::controller(CustomerSettingController::class)->group(function(){
         Route::get('/setting', 'index')->name('setting.index');
         Route::put('/setting/update/{user}', 'update')->name('setting.update');
