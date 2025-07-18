@@ -45,4 +45,15 @@ class SettingController extends Controller
 
         return back()->with('toast_success', 'Akun Berhasil Diubah');
     }
+
+    public function sopKegiatan()
+    {
+        return view('admin.setting.sop-kegiatan');
+    }
+
+    public function sopLaporan()
+    {
+        return view('admin.setting.sop-laporan');
+    }
+
 }
