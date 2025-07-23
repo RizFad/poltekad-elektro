@@ -115,5 +115,7 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.', 'middleware' => ['aut
     Route::controller(CustomerSettingController::class)->group(function(){
         Route::get('/setting', 'index')->name('setting.index');
         Route::put('/setting/update/{user}', 'update')->name('setting.update');
+        Route::get('/setting/sop-kegiatan', 'sopKegiatan')->name('setting.sop.kegiatan');
+        Route::get('/setting/sop-laporan', 'sopLaporan')->name('setting.sop.laporan');
     });
 });

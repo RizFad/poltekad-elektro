@@ -56,8 +56,11 @@ class TransactionController extends Controller
     public function returnTransaction(Transaction $transaction)
     {
         // Validasi apakah transaksi milik user
+        // if ($transaction->user_id !== Auth::id()) {
+        //     abort(403, 'Unauthorized action.');
+        // }
         if ($transaction->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
+            return back()->withErrors('Tindakan tidak sah. Peminjaman harus memiliki pengguna yang sama dengan yang sedang login.');
         }
 
         DB::beginTransaction();
