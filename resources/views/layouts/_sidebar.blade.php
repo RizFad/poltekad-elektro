@@ -177,7 +177,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                SOP Laporan Kegiatan
+                                SOP
                             </span>
                         </a>
                     </li>
@@ -507,7 +507,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                SOP Laporan Kegiatan
+                                SOP
                             </span>
                         </a>
                     </li>
