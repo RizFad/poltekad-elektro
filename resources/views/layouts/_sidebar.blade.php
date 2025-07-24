@@ -198,7 +198,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Petunjuk Penggunaan
+                                Panduan
                             </span>
                         </a>
                     </li>
@@ -528,7 +528,7 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title">
-                                Petunjuk Penggunaan
+                                Panduan
                             </span>
                         </a>
                     </li>

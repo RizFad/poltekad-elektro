@@ -100,8 +100,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'r
     Route::controller(SettingController::class)->group(function(){
         Route::get('/setting', 'index')->name('setting.index');
         Route::put('/setting/update/{user}', 'update')->name('setting.update');
-        Route::get('/setting/sop-kegiatan', 'sopKegiatan')->name('setting.sop.kegiatan');
-        Route::get('/setting/sop-laporan', 'sopLaporan')->name('setting.sop.laporan');
+        Route::get('/setting/panduan', 'sopKegiatan')->name('setting.sop.kegiatan');
+        Route::get('/setting/sop', 'sopLaporan')->name('setting.sop.laporan');
     });
 });
 
@@ -115,7 +115,7 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.', 'middleware' => ['aut
     Route::controller(CustomerSettingController::class)->group(function(){
         Route::get('/setting', 'index')->name('setting.index');
         Route::put('/setting/update/{user}', 'update')->name('setting.update');
-        Route::get('/setting/sop-kegiatan', 'sopKegiatan')->name('setting.sop.kegiatan');
-        Route::get('/setting/sop-laporan', 'sopLaporan')->name('setting.sop.laporan');
+        Route::get('/setting/panduan', 'sopKegiatan')->name('setting.sop.kegiatan');
+        Route::get('/setting/sop', 'sopLaporan')->name('setting.sop.laporan');
     });
 });

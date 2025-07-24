@@ -42,7 +42,7 @@
                         <div class="relative">
                             <!-- Button for toggling dropdown -->
                             <button id="sopButton" class="border px-2 py-1 rounded-lg font-medium hover:bg-sky-900 flex items-center gap-2">
-                                SOP & Petunjuk
+                                SOP & Panduan
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                                 </svg>
@@ -52,11 +52,11 @@
                             <div id="dropdownMenu" class="absolute right-0 hidden mt-2 space-y-2 bg-sky-900 text-white border border-sky-700 rounded-lg shadow-lg">
                                 @role('Customer')
                                     <a href="{{ route('customer.setting.sop.laporan') }}" class="block px-4 py-2 text-sm">SOP</a>
-                                    <a href="{{ route('customer.setting.sop.kegiatan') }}" class="block px-4 py-2 text-sm">Petunjuk</a>
+                                    <a href="{{ route('customer.setting.sop.kegiatan') }}" class="block px-4 py-2 text-sm">Panduan</a>
                                 @endrole
                                 @role('Admin|Super Admin')
                                     <a href="{{ route('admin.setting.sop.laporan') }}" class="block px-4 py-2 text-sm">SOP</a>
-                                    <a href="{{ route('admin.setting.sop.kegiatan') }}" class="block px-4 py-2 text-sm">Petunjuk</a>
+                                    <a href="{{ route('admin.setting.sop.kegiatan') }}" class="block px-4 py-2 text-sm">Panduan</a>
                                 @endrole
                             </div>
                         </div>
