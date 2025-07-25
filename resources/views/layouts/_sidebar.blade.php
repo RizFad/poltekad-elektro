@@ -105,20 +105,12 @@
                     </li> --}}
                     <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Peminjaman</div>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is('customer.transaction') ? 'active' : '' }}"
-                            href="{{ route('customer.transaction') }}">
-                            <span class=" nav-link-icon d-md-none
-                            d-lg-inline-block mr-1">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-report-analytics" width="24" height="24"
-                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
+                        <a class="nav-link {{ Route::is('customer.transaction') ? 'active' : '' }}" href="{{ route('customer.transaction') }}">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-analytics" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path
-                                        d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2">
-                                    </path>
-                                    <rect x="9" y="3" width="6" height="4" rx="2">
-                                    </rect>
+                                    <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
+                                    <rect x="9" y="3" width="6" height="4" rx="2"></rect>
                                     <path d="M9 17v-5"></path>
                                     <path d="M12 17v-1"></path>
                                     <path d="M15 17v-3"></path>
@@ -129,12 +121,18 @@
                             </span>
                         </a>
                     </li>
+
                     <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Pengembalian</div>
+
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::is('customer.transaction.return') ? 'active' : '' }}"
-                            href="{{ route('customer.transaction.return') }}">
+                        <a class="nav-link {{ Route::is('customer.transaction.return') ? 'active' : '' }}" href="{{ route('customer.transaction.return') }}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                                <i class="fas fa-archive" style="font-size: 12px;"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M4 4h16v16H4z"></path>
+                                    <path d="M9 9l6 6"></path>
+                                    <path d="M9 15l6 -6"></path>
+                                </svg>
                             </span>
                             <span class="nav-link-title">
                                 Pengembalian (PKA#11)

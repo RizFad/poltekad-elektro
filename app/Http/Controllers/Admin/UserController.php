@@ -68,7 +68,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8',
             'name' => 'required|string|max:255',
-            'department' => 'nullable|string|max:255',
+            'department' => 'required|string|max:255',
         ]);
 
         $role = Role::where('name', 'Customer')->first();
