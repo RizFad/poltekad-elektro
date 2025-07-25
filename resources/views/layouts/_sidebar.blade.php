@@ -415,7 +415,7 @@
                         </a>
                     </li> --}}
                     <div class="hr-text hr-text-left ml-2 mb-2 mt-2">User Manajemen</div>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link {{ Route::is('admin.permission*') ? 'active' : '' }}"
                             href="{{ route('admin.permission.index') }}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
@@ -452,7 +452,7 @@
                                 Role
                             </span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('admin.user*') ? 'active' : '' }}"
                             href="{{ route('admin.user.index') }}">

@@ -12,7 +12,7 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Department</th>
-                            <th>Role</th>
+                            <!-- <th>Role</th> -->
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -23,11 +23,11 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->department }}</td>
-                                <td>
+                                <!-- <td>
                                     @foreach ($user->roles as $role)
                                         {{ $role->name }}
                                     @endforeach
-                                </td>
+                                </td> -->
                                 <td>
                                     <x-button-modal :id="$user->id" title="" icon="edit" style=""
                                         class="btn btn-info btn-sm" />
@@ -37,15 +37,19 @@
                                             @method('PUT')
                                             <x-input name="name" type="text" title="Nama" placeholder=""
                                                 :value="$user->name" />
+                                            <x-input name="email" type="email" title="Email" placeholder=""
+                                                :value="$user->email" />
                                             <x-input name="password" type="password" title="Password" placeholder="" />
-                                            <x-select title="Role" name="role">
+                                            <x-input name="department" type="text" title="Department" placeholder=""
+                                                :value="$user->department" />
+                                            <!-- <x-select title="Role" name="role">
                                                 <option value="">Silahkan Pilih</option>
                                                 @foreach ($roles as $role)
                                                     <option value="{{ $role->id }}" @selected($user->roles()->find($role->id))>
                                                         {{ $role->name }}
                                                     </option>
                                                 @endforeach
-                                            </x-select>
+                                            </x-select> -->
                                             <x-button-save title="Simpan" icon="save" class="btn btn-primary" />
                                         </form>
                                     </x-modal>

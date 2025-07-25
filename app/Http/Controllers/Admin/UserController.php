@@ -35,18 +35,22 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'department' => 'nullable|string|max:255',
             'password' => 'nullable|string|min:8',
-            'role' => 'required|exists:roles,id',
+            // 'role' => 'required|exists:roles,id',
         ]);
 
         $user->name = $request->name;
+        $user->email = $request->email;
+        $user->department = $request->department;
 
         if ($request->filled('password')) {
             $user->password = bcrypt($request->password);
         }
 
         $user->save();
-        $user->syncRoles($request->role);
+        // $user->syncRoles($request->role);
 
         return back()->with('toast_success', 'Data User Berhasil Diubah');
     }
