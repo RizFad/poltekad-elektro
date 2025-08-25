@@ -21,6 +21,7 @@
                         >
                             <option value="" selected>Silahkan Pilih</option>
                             <option value="Umum">Umum</option>
+                            <option value="Dosen">Dosen</option>
                             <option value="Mahasiswa">Mahasiswa</option>
                             <option value="Kepala Jurusan">Kepala Jurusan</option>
                             <option value="Kepala Program Studi">Kepala Program Studi</option>
